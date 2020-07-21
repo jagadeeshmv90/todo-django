@@ -1,14 +1,38 @@
-<h3>To Do App</h3>
+{% extends 'task/base.html' %}
+{% block content %}
+<div class="container card app-div">
+    <h3 class="bold-text card-body text-primary">To Do App</h3>
+    <hr class="half-width">
+    <div class="center-div">
+        <form method="POST">
+            <span>
+                Task: {{ form.name }}
+            </span>
+            <span>
+                User: {{ form.person }}
+            </span>
+            <span>
+                important : {{ form.important }}
+            </span>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form }}
+            <input type="submit" class="btn btn-success" value="Save">
+            {% csrf_token %}
+        </form>
+    </div>
     <br>
-    <input type="submit" name="Save">
-</form>
 
-<div>
-    {% for task in tasks %}
-        {{ task }}
-    {% endfor %}
+    <div class="list-group">
+        {% for task in tasks %}
+        <li class="list-group-item list-group-item-action">
+            {% if task.important %}
+            <b>{% endif %}
+                {{ task }} {% if task.important %}
+            </b>{% endif %}
+            <a href="{% url 'update_task' task.id %}" class="btn-sm btn-warning">Update</a> <a
+                href="{% url 'delete_task' task.id %}" class="btn-sm btn-danger">Delete</a>
+        </li>
+        <br>
+        {% endfor %}
+    </div>
 </div>
+{% endblock %}

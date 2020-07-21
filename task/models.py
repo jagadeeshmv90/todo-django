@@ -3,6 +3,7 @@ from django.db import models
 
 class Task(models.Model):
     persons = (
+
         ('Me', 'me'),
         ('Njan', 'Njan'),
         ('Swayam', 'Swayam'),
