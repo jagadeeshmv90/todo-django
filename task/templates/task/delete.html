@@ -2,18 +2,16 @@
 {% block content %}
 <div class="container">
     <div class="app-div">
-        <div class="card">
+        <div class="card p-5">
 
-            <h4>Are you sure you want to Delete {{ task.name }}?</h4>
-
+            <p>Are you sure you want to Delete {{ task.name }}?</p>
             <form method="POST">
                 {{ form.name }}
 
-                <input type="submit" value="Delete" class="btn-sm btn-danger">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
                 {% csrf_token %}
             </form>
-            <br>
-            <a href="{% url 'home' %}" class="btn-sm btn-primary">Cancel</a>
         </div>
     </div>
 </div>

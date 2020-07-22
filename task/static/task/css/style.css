@@ -2,17 +2,16 @@
     font-size:4em;
     font-weight:700;
     text-transform:uppercase;
+    color:#900C3F;
+
 }
 .app-div{
+    background:#FFF;
     padding: 4rem;
-    max-width:60%;
+    max-width:70%;
     margin: 2rem auto;
     border-radius: 5px;
     box-shadow: 2px 2px 5px;
-    background:#E0F7FA;
-}
-.half-width {
-    width:50%;
 }
 
 .list-item{
@@ -25,4 +24,7 @@
     padding:1em;
     border-radius:5px;
 
+}
+body{
+    background:#E0F7FA;
 }
